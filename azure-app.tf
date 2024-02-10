@@ -48,8 +48,6 @@ resource "azurerm_linux_web_app" "taskboardapp" {
   }
 }
 
-# 4dm1n157r470r
-# 4-v3ry-53cr37-p455w0rd
 resource "azurerm_mssql_server" "mssqlserver" {
   name                         = "${var.sql_server_name}-${random_integer.ri.result}"
   resource_group_name          = azurerm_resource_group.taskboardrg.name
@@ -82,4 +80,3 @@ resource "azurerm_app_service_source_control" "github" {
   branch                 = "main"
   use_manual_integration = true
 }
-
