@@ -37,7 +37,7 @@ resource "azurerm_service_plan" "taskboardsp" {
 }
 
 resource "azurerm_linux_web_app" "taskboardapp" {
-  name                = azurerm_service_plan.taskboardsp.name
+  name                = var.app_service_name
   resource_group_name = azurerm_resource_group.taskboardrg.name
   location            = azurerm_service_plan.taskboardsp.location
   service_plan_id     = azurerm_service_plan.taskboardsp.id
